@@ -1,0 +1,15 @@
+<form>
+    <select name="selected_item">
+        {% for item in inventory %}
+        <option value = "{{item[0]}}">{{item[1]}}
+            {{item[1]}} - {{item[2]}} - Size: {{item[3]}} - Colour: {{item[4]}} 
+        </option>
+        {% endfor %}
+    </select>
+    <label for="quantity">Enter Quantity:</label>
+    <input type="number" name="quantity" id="quantity" min="0">
+    <input type="radio" name="action" id="sold" value="sold">
+    <label for="sold">SOLD</label>
+    <input type="radio" name="action" id="restock" value="restock">
+    <label for="restock">RESTOCK</label>
+</form>
