@@ -1,0 +1,30 @@
+<h1>Inventory</h1>
+
+{% if inventory %} 
+<table border="1">
+    <tr>
+        <th>Barcode</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>color</th>
+        <th>Stock</th>
+    </tr>
+
+    {% for item in inventory %}
+    <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}</td>
+        <td>{{item[4]}}</td>
+        <td>{{item[5]}}</td>
+        <td>{{item[6]}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% else %}
+<p>No inventory items available.</p>
+
+{% endif %} 
