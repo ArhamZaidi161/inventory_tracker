@@ -1,9 +1,10 @@
 import sqlite3  
 
-database = sqlite3.connect("inventory.db") 
+database = sqlite3.connect("inventory.db")  # Connect to or create the database file
 
-cursor = database.cursor()
+cursor = database.cursor()  # Create a cursor to execute SQL commands
 
+# Create the inventory table if it doesn't exist yet
 cursor.execute("""CREATE TABLE IF NOT EXISTS inventory(
     barcode TEXT PRIMARY KEY,
     category TEXT,
@@ -140,5 +141,5 @@ cursor.execute("""
 
 
 
-database.commit()
-database.close()
+database.commit()  # Save changes to the database
+database.close()   # Close the connection to the database

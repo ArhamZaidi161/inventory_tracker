@@ -1,15 +1,46 @@
-<form>
-    <select name="selected_item">
-        {% for item in inventory %}
-        <option value = "{{item[0]}}">
-            {{item[1]}} - {{item[2]}} - Size: {{item[3]}} - Colour: {{item[4]}} 
+<form>  <!-- Form to update stock -->
+
+    <select name="selected_category">  <!-- Dropdown to choose by category -->
+        {% for item in categories %}
+        <option value="{{ item[0] }}">
+            {{item[0]}} <!-- category options -->
         </option>
-        {% endfor %}
+        {% endfor %} 
     </select>
+
+    <select name="selected_name"> <!-- Dropdown to choose by names -->
+        {% for item in names %}
+        <option value="{{item[0]}}">
+            {{ item[0] }} <!-- name options -->
+        </option>
+        {% endfor %} 
+    </select>
+
+    <select name="selected_size"> <!-- Dropdown to choose by sizes -->
+        {% for item in sizes %}
+        <option value="{{item[0]}}">
+            {{ item[0] }} <!-- size options -->
+        </option>
+        {% endfor %} 
+    </select>
+
+    <select name="selected_color"> <!-- Dropdown to choose by colors -->
+        {% for item in colors %}
+        <option value="{{item[0]}}">
+            {{ item[0] }} <!-- Color options -->
+        </option>
+        {% endfor %} 
+    </select>
+
+
+
     <label for="quantity">Enter Quantity:</label>
-    <input type="number" name="quantity" id="quantity" min="0">
-    <input type="radio" name="action" id="sold" value="sold">
+    <input type="number" name="quantity" id="quantity" min="0">  <!-- Quantity input -->
+
+    <input type="radio" name="action" id="sold" value="sold">  <!-- Radio button for 'sold' -->
     <label for="sold">SOLD</label>
-    <input type="radio" name="action" id="restock" value="restock">
+
+    <input type="radio" name="action" id="restock" value="restock">  <!-- Radio button for 'restock' -->
     <label for="restock">RESTOCK</label>
+
 </form>
