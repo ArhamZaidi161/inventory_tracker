@@ -1,4 +1,4 @@
-<form>  <!-- Form to update stock -->
+<form method="post">  <!-- Form to update stock -->
 
     <select name="selected_category">  <!-- Dropdown to choose by category -->
         {% for item in categories %}
@@ -42,5 +42,7 @@
 
     <input type="radio" name="action" id="restock" value="restock">  <!-- Radio button for 'restock' -->
     <label for="restock">RESTOCK</label>
+
+    <input type="submit" id="submit"> <!-- button to submit form -->
 
 </form>
